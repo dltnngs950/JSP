@@ -25,7 +25,7 @@
 	 -->
 
 	<logger name="kr.or.ddit" level="debug"> <!-- 내가 사용하고있는 로그만 보고싶다. name="패키지명" -->
-		<appender-ref ref="FILE" /> <!-- ref (리퍼런스의 약자) 참조한다 -->
+		<appender-ref ref="STDOUT" /> <!-- ref (리퍼런스의 약자) 참조한다 -->
 	</logger>
 
 

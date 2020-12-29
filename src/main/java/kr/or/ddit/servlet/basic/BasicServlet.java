@@ -83,7 +83,7 @@ public class BasicServlet extends HttpServlet{
 		pw.flush();		// 더 이상 작성할 내용이 없으면 작업을 마무리 한다
 		pw.close();		// 사용한 자원을 반납
 		
-		super.doGet(req, resp);
+		
 	}
 	
 	

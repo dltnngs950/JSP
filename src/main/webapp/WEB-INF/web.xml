@@ -9,27 +9,33 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>basicServlet</servlet-name>
     <servlet-class>kr.or.ddit.servlet.basic.BasicServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>basicServlet</servlet-name>
     <url-pattern>/basicServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>TimeTableServlet</display-name>
     <servlet-name>TimeTableServlet</servlet-name>
     <servlet-class>kr.or.ddit.servlet.basic.TimeTableServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>TimeTableServlet</servlet-name>
     <url-pattern>/TimeTableServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>kr.or.ddit.login.web.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
 </web-app>

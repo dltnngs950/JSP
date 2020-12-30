@@ -51,7 +51,8 @@ HttpServletReqeust : 사용자가 요청을 보낼때의 정보 (파라미터, �
 		request.getContextType() : 리턴값을 출력 <br>
 		request.getMethod() : 리턴값을 출력 <br>
 		requset.getRequestURI() : 리턴값을 출력 <br>
-		requset.getServerPort() : 리턴값을 추력 <br>
+		requset.getContextPath() : 리턴값을 출력 <br>
+		requset.getServerPort() : 리턴값을 출력 <br>
 
 
 

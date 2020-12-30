@@ -9,7 +9,7 @@
 <body>
 
 	<% // 스크립틀릿
-		request.
+		
 		
 	%>
 	webapp/index.jsp -> localhost/index.jsp <br>

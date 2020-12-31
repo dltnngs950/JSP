@@ -4,7 +4,6 @@
 	// Content-Disposition header : 파일 다운로드, 업로드시 사용하는 파일과 관련된 헤더
 	response.setHeader("Content-Disposition", "attachement; filename=excel.xls");
 	
-
 %>
        
 <!DOCTYPE html>

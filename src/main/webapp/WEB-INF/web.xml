@@ -38,4 +38,44 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestProcess</display-name>
+    <servlet-name>RequestProcess</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.scope.RequestProcess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestProcess</servlet-name>
+    <url-pattern>/RequestProcess</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Requsetcont</display-name>
+    <servlet-name>Requsetcont</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.scope.Requsetcont</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Requsetcont</servlet-name>
+    <url-pattern>/Requsetcont</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Scope</display-name>
+    <servlet-name>Scope</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.scope.Scope</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Scope</servlet-name>
+    <url-pattern>/Scope</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Sumcalculation</display-name>
+    <servlet-name>Sumcalculation</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.scope.Sumcalculation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Sumcalculation</servlet-name>
+    <url-pattern>/Sumcalculation</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -78,4 +78,32 @@
     <servlet-name>Sumcalculation</servlet-name>
     <url-pattern>/Sumcalculation</url-pattern>
   </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error/404/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error/500/500.html</location>
+  </error-page>
+  <!--error) ArithmeticException 선언 -->
+  <error-page>
+    <exception-type>java.lang.ArithmeticException</exception-type>
+    <location>/error/type/ariError.jsp</location>
+  </error-page>
+  <!--error) RuntimeException 선언 -->
+  <error-page>
+    <exception-type>java.lang.RuntimeException</exception-type>
+    <location>/error/type/runError.jsp</location>
+  </error-page>
+  <servlet>
+    <description></description>
+    <display-name>Mulcalculation</display-name>
+    <servlet-name>Mulcalculation</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.scope.Mulcalculation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mulcalculation</servlet-name>
+    <url-pattern>/mulcalculation</url-pattern>
+  </servlet-mapping>
 </web-app>

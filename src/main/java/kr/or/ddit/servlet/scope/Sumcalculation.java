@@ -28,6 +28,7 @@ public class Sumcalculation extends HttpServlet {
 		int end = Integer.parseInt(request.getParameter("end"));
 		int sum = 0;
 		
+		// 누적 합
 		HttpSession session = request.getSession();
 		logger.debug("start : " + start);
 		logger.debug("start : " + end);
@@ -39,7 +40,7 @@ public class Sumcalculation extends HttpServlet {
 		}
 		logger.debug("-------- 누적 합 끝 --------");
 		logger.debug("결과 = " + sum);
-		
+			
 		session.setAttribute("sumResult", sum);
 		
 		request.getRequestDispatcher("jsp/sumResult.jsp").forward(request, response);

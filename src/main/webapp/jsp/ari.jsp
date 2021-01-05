@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>sumResult</h2>
-	
-	start와 end의 누적값 : <%= session.getAttribute("sumResult") %> <br><br>
-	
-	fir와 sec의 곱셈값 : <%= session.getAttribute("sumResult1") %>
-
+	<%
+		int a= 5;
+		int b = 0;
+		int c = a /b;
+	%>
 </body>
 </html>

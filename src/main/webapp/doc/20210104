@@ -123,7 +123,7 @@ sumCalculation servlet으로 요청
 (사용자가 start값을 end보다 작은 값을 넣는다고 가정)
 
 post(결과처리)
-logger로 startㅏ라미터와 end 파라미터 사이의 값을 합으로 계산 후 출력
+logger로 start파라미터와 end 파라미터 사이의 값을 합으로 계산 후 출력
 start와 end사이의 값을 더하여 session에 "sunResult"키로 저장
 sumResult.jsp로 dispatch forward
 session에 저장된 sumResult값을 화면에 출력

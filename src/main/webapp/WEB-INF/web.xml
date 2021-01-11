@@ -86,12 +86,10 @@
     <error-code>500</error-code>
     <location>/error/500/500.html</location>
   </error-page>
-  <!--error) ArithmeticException 선언 -->
   <error-page>
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/error/type/ariError.jsp</location>
   </error-page>
-  <!--error) RuntimeException 선언 -->
   <error-page>
     <exception-type>java.lang.RuntimeException</exception-type>
     <location>/error/type/runError.jsp</location>
@@ -105,5 +103,45 @@
   <servlet-mapping>
     <servlet-name>Mulcalculation</servlet-name>
     <url-pattern>/mulcalculation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllUser</display-name>
+    <servlet-name>AllUser</servlet-name>
+    <servlet-class>kr.or.ddit.user.controller.AllUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllUser</servlet-name>
+    <url-pattern>/alluser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Allstaff</display-name>
+    <servlet-name>Allstaff</servlet-name>
+    <servlet-class>kr.or.ddit.staff.controller.Allstaff</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Allstaff</servlet-name>
+    <url-pattern>/allstaff</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllEmp</display-name>
+    <servlet-name>AllEmp</servlet-name>
+    <servlet-class>kr.or.ddit.staff.controller.AllEmp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllEmp</servlet-name>
+    <url-pattern>/allEmp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PagingUser</display-name>
+    <servlet-name>PagingUser</servlet-name>
+    <servlet-class>kr.or.ddit.user.controller.PagingUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PagingUser</servlet-name>
+    <url-pattern>/pagingUser</url-pattern>
   </servlet-mapping>
 </web-app>

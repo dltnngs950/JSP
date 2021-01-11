@@ -10,7 +10,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-
     <title>Signin Template for Bootstrap</title>
 
 <!--     Bootstrap core CSS -->
@@ -101,7 +100,7 @@
         				
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="사용자 비밀번호" 
-        			name="pass" value="brownpass" required>
+        			name="pass" required>
         			
         <div class="checkbox">
         

@@ -48,6 +48,8 @@ public class PagingUser extends HttpServlet {
 		int userCnt = (int)map.get("userCnt");
 		int pagination = (int)Math.ceil((double) userCnt / pageSize); 
 		
+		request.setAttribute("pageVo", pageVo);
+		
 		request.setAttribute("userlist", userlist);
 		request.setAttribute("pagination", pagination);
 		

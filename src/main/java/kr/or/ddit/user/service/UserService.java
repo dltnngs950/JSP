@@ -38,6 +38,23 @@ public class UserService implements UserServiceI{
 		
 		return map;
 	}
+
+	@Override
+	public int modifyUser(UserVo userVo) {
+		
+		return userDao.modifyUser(userVo);
+	}
+
+	@Override
+	public int registUser(UserVo userVo) {
+		
+		try {
+			return userDao.registUser(userVo);
+		}catch(Exception e) {
+			return 0;
+		}
+		 
+	}
 	
 	
 

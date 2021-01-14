@@ -41,6 +41,8 @@
 </head>
 
 <body>
+<%@ include file="/common/header.jsp" %>
+
 <form id="frm" action="<%=request.getContextPath()%>/user">
 	<input type="hidden" id="userid" name="userid" value="">
 </form>
@@ -69,7 +71,8 @@
 			</form>
 		</div>
 	</div>
-</nav><div class="container-fluid">
+</nav>
+<div class="container-fluid">
 		<div class="row">
 			
 <div class="col-sm-3 col-md-2 sidebar">
@@ -93,12 +96,7 @@
 			<%
 				List<UserVo> list = (List<UserVo>)request.getAttribute("userlist");
 			
-				for(int i =0; i < list.size(); i++){
-					
-					UserVo vo = list.get(i);
-					
-					if(list != null){
-				
+				for(UserVo vo : list){
 			%>
 				<tr class="user" data-userid="<%=vo.getUserid() %>">
 					<td><%=vo.getUserid() %></td>
@@ -107,7 +105,7 @@
 					<td><%=vo.getReg_dt_fmt() %></td>
 				</tr>
 			<%
-					}
+					
 				}
 			%>
 			
@@ -140,7 +138,7 @@
 			 }else{
 		 %>
 		<li><a href="<%=request.getContextPath() %>/pagingUser?page=<%=i %>
-		&pageSize=<%=pagination %>"><%=i %></a></li>
+		&pageSize=<%=pageVo.getPageSize() %>"><%=i %></a></li>
 		<%
 			 }
 		 }

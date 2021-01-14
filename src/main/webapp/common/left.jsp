@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
    <ul class="nav nav-sidebar"> 
    	 	<li class="active"><a href="#">Main <span class="sr-only">(current)</span></a></li>
 		<li class="active"><a href="<%= request.getContextPath()%>/alluser">전체 사용자</a></li>
 		<li class="active"><a href="<%= request.getContextPath()%>/allEmp">전체 직원</a></li>
 		<li class="active"><a href="<%= request.getContextPath()%>/pagingUser?page=1&pageSize=5">사용자 페이징 리스트</a></li>
+		<li class="active"><a href="<%= request.getContextPath()%>/registUser?userid=">사용자 등록</a></li>
 		<%--
 			localhost/pagingUser?page=1&PageSize=5 로 요청시
 			pagingUser.jsp에서 페이지에 해당하는 사용자 5명만 출력 되도록 개발

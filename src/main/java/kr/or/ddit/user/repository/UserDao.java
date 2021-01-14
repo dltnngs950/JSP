@@ -12,7 +12,8 @@ public class UserDao implements UserDaoI{
 
    @Override
    public List<UserVo> selectAllUser() {
-      SqlSession sqlSession = MybatisUtil.getSqlSession();
+      SqlSession sqlSession = MybatisUtil.getSqlSession(); // sqlSession객체는 호출될때마다 구분을 해줘야한다
+      // select면 select update면 update 이런식으로..
       
       // select : 리턴되는 값의 복수 유무를 판단
       //         1. 단건 : 일반객체를 반환(UserVo) selectOne()
@@ -56,6 +57,40 @@ public int selectAllUserCnt() {
 	sqlSession.close();
 	
 	return userCnt;
+}
+
+@Override
+public int modifyUser(UserVo userVo) {
+	
+	SqlSession sqlSession = MybatisUtil.getSqlSession();
+	int updateCnt = sqlSession.update("users.modifyUser", userVo);
+	
+	// update는 데이터베이스에 영향을 주는 쿼리이므로 별일이 없이 수행되었다면 커밋을 해주어야한다.
+	if (updateCnt == 1) {
+		sqlSession.commit();
+	} else {
+		sqlSession.rollback();
+	}
+	
+	sqlSession.close();
+	
+	return updateCnt;
+}
+
+@Override
+public int registUser(UserVo userVo) {
+	SqlSession sqlSession = MybatisUtil.getSqlSession();
+	int insertCnt = sqlSession.insert("users.registUser", userVo);
+	
+	if (insertCnt == 1) {
+		sqlSession.commit();
+	} else {
+		sqlSession.rollback();
+	}
+	
+	sqlSession.close();
+	
+	return insertCnt;
 }
 
 }

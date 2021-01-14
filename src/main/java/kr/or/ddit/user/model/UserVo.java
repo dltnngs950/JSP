@@ -70,7 +70,20 @@ public void setRealfilename(String realfilename) {
    public UserVo() {}
    
    
-   // getters, setters, toString 생성
+   public UserVo(String userid, String usernm, String pass, Date reg_dt, String alias, String addr1, 
+		   String addr2, String zipcode) {
+	this.userid = userid;
+	this.usernm = usernm;
+	this.pass = pass;
+	this.reg_dt = reg_dt;
+	this.alias = alias;
+	this.addr1 = addr1;
+	this.addr2 = addr2;
+	this.zipcode = zipcode;
+}
+
+
+// getters, setters, toString 생성
    public String getUserid() {
       return userid;
    }

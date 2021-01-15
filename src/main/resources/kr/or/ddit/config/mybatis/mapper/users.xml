@@ -58,4 +58,8 @@
     	#{zipcode}
   	)
   </insert>
+  
+  <delete id="deleteUser" parameterType="String">
+  	DELETE users WHERE userid = #{value}
+  </delete>
 </mapper>

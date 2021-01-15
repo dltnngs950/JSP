@@ -42,17 +42,6 @@
     		}
      	%>  
      	
-     	$('#registBtn').on('click', function(){
-     	 <%
-    		 if(userVo != null){ 
-    	 %> 
-    	 alert("중복된 아이디 입니다")
-    	 <%
-    		 }
-    	 %>
-     	})
-    	  
-
          $('#addrBtn').on('click',function(){
             
              new daum.Postcode({
@@ -116,16 +105,17 @@
          
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          
-            <form class="form-horizontal" id="sendfrm" role="form" action="<%= request.getContextPath()%>/registUser" method="POST">
+            <form class="form-horizontal" id="sendfrm" role="form" 
+            	action="<%= request.getContextPath()%>/registUser" method="POST">
                       
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
                   <div class="col-sm-8">
-<%--                   <% String userid = request.getParameter("userid"); --%>
-<!--                   	userid = userid == null ? "" : userid;-->
-<%--                 		  %> --%>
+                  <% String userid = request.getParameter("userid");
+                  	userid = userid == null ? "" : userid;
+                  %> 
                      <input type="text" class="form-control" id="userid" name="userid" placeholder="사용자 아이디"/>
-<%--                      value="<%= userid %>"> --%>
+                     
                   </div>
                </div>
 

@@ -16,26 +16,24 @@ import kr.or.ddit.user.service.UserService;
 import kr.or.ddit.user.service.UserServiceI;
 
 @WebServlet("/registUser")
-public class RegistUser extends HttpServlet{
+public class RegistUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(RegistUser.class);
 	private UserServiceI userService = new UserService();
-	
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		req.getRequestDispatcher("/user/registUser.jsp").forward(req, resp);
-			
+
 	}
-	
+
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		req.setCharacterEncoding("utf-8");
-		
+
 		String userid = req.getParameter("userid");
 		String usernm = req.getParameter("usernm");
 		String pass = req.getParameter("pass");
@@ -52,13 +50,13 @@ public class RegistUser extends HttpServlet{
 		userVo.setAddr1(addr1);
 		userVo.setAddr2(addr2);
 		userVo.setZipcode(zipcode);
-		
+
 		int insertCnt = userService.registUser(userVo);
-		
+
 		if (insertCnt == 1) {
 			resp.sendRedirect(req.getContextPath() + "pagingUser?page=1&pageSize=5");
 		} else {
-			logger.debug("########### {}",userid);
+			logger.debug("########### {}", userid);
 			req.setAttribute("userVo", userVo);
 			doGet(req, resp);
 		}

@@ -55,6 +55,12 @@ public class UserService implements UserServiceI{
 		}
 		 
 	}
+
+	@Override
+	public int deleteUser(String userid) {
+		
+		return userDao.deleteUser(userid);
+	}
 	
 	
 

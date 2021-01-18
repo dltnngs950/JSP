@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 		// 서버에 등록된 자원을 요청할 때 사용하는 객체
 		InitialContext context = new InitialContext();

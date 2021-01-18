@@ -22,6 +22,8 @@
 		// 종료( 작업 시간 확인 )
 		long endT = System.currentTimeMillis();
 		out.print("duration : " + (endT - startT));
+		
 	%>
+	
 </body>
 </html>

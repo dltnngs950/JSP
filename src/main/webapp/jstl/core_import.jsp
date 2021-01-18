@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<% // 스크립틀릿
-		
-		
-	%>
-	webapp/index.jsp -> localhost/index.jsp <br>
-	
-	webapp/image/brown.png <br>
-	
-	<img src="${pageContextPath.request.getContextPath}/image/sally.png"/>
-
+	<c:import url="https://search.naver.com/search.naver">
+		<c:param name="query" value="코로나"></c:param>
+	</c:import>
 </body>
 </html>

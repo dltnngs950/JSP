@@ -17,7 +17,7 @@
 
    <%@ include file="/common/common_lib.jsp" %>
    
-   <script src="/js/jquery/jquery-1.12.4.js"></script>
+<!--    <script src="/js/jquery/jquery-1.12.4.js"></script> -->
    <link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
    <link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
    
@@ -28,19 +28,19 @@
    <script>
       $(function(){
     	  
-    	 <%
-    		 if(userVo != null){ 
-    	 %> 
-    		  $("#userid").val("<%= userVo.getUserid()%>")
-    		  $("#usernm").val("<%= userVo.getUsernm()%>")
-    		  $("#pass").val("<%= userVo.getPass()%>")
-    		  $("#alias").val("<%= userVo.getAlias()%>")
-    		  $("#addr1").val("<%= userVo.getAddr1()%>")
-    		  $("#addr2").val("<%= userVo.getAddr2()%>")
-    		  $("#zipcode").val("<%= userVo.getZipcode()%>")	    
-    	<% 
-    		}
-     	%>  
+<%--     	 <% --%>
+//     		 if(userVo != null){ 
+<%--     	 %>  --%>
+//     		  $("#userid").val("brown")
+<%--     		  $("#usernm").val("<%= userVo.getUsernm()%>") --%>
+<%--     		  $("#pass").val("<%= userVo.getPass()%>") --%>
+<%--     		  $("#alias").val("<%= userVo.getAlias()%>") --%>
+<%--     		  $("#addr1").val("<%= userVo.getAddr1()%>") --%>
+<%--     		  $("#addr2").val("<%= userVo.getAddr2()%>") --%>
+<%--     		  $("#zipcode").val("<%= userVo.getZipcode()%>")	     --%>
+<%--     	<%  --%>
+//     		}
+<%--      	%>   --%>
      	
          $('#addrBtn').on('click',function(){
             
@@ -105,16 +105,19 @@
          
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          
+         	contextPath el
             <form class="form-horizontal" id="sendfrm" role="form" 
-            	action="<%= request.getContextPath()%>/registUser" method="POST">
+            	action="${pageContext.request.contextPath}/registUser" method="POST">
+            	
                       
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
                   <div class="col-sm-8">
-                  <% String userid = request.getParameter("userid");
-                  	userid = userid == null ? "" : userid;
-                  %> 
-                     <input type="text" class="form-control" id="userid" name="userid" placeholder="사용자 아이디"/>
+<%--                   <% String userid = request.getParameter("userid"); --%>
+<!--                    userid = userid == null ? "" : userid; -->
+<%--                   %>  --%>
+                     <input type="text" class="form-control" id="userid" name="userid" 
+                     placeholder="사용자 아이디" value="${param.userid }"/>
                      
                   </div>
                </div>
@@ -122,28 +125,32 @@
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
                   <div class="col-sm-8">
-                     <input type="text" class="form-control" id="usernm" name="usernm" placeholder="사용자 이름" >
+                     <input type="text" class="form-control" id="usernm" name="usernm" 
+                     placeholder="사용자 이름" value="${param.usernm }"/>
                   </div>
                </div>
                   
                  <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">비밀번호</label>
                   <div class="col-sm-8">
-                     <input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호">
+                     <input type="password" class="form-control" id="pass" name="pass" 
+                     placeholder="비밀번호" value="${param.pass }"/>
                   </div>
                </div>
                
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">별명</label>
                   <div class="col-sm-8">
-                     <input type="text" class="form-control" id="alias" name="alias" placeholder="별명">
+                     <input type="text" class="form-control" id="alias" name="alias" 
+                     placeholder="별명" value="${param.alias }"/>
                   </div>
                </div>
                             
                <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">도로주소</label>
                   <div class="col-sm-8">
-                     <input type="text" class="form-control" id="addr1" name="addr1" placeholder="도로주소" readonly>
+                     <input type="text" class="form-control" id="addr1" name="addr1" 
+                     placeholder="도로주소" value="${param.addr1 }" readonly/>
                   </div>
                   <div class="col-sm-2">
                      <button type="button" id="addrBtn"class="btn btn-default">주소검색</button>
@@ -153,13 +160,15 @@
                <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">상세주소</label>
                   <div class="col-sm-8">
-                     <input type="text" class="form-control" id="addr2" name="addr2" placeholder="상세주소">
+                     <input type="text" class="form-control" id="addr2" name="addr2" 
+                     placeholder="상세주소" value="${param.addr2 }"/>
                   </div>
                </div>
                <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">우편번호</label>
                   <div class="col-sm-8">
-                     <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="우편번호" readonly>
+                     <input type="text" class="form-control" id="zipcode" name="zipcode" 
+                     placeholder="우편번호" value="${param.zipcode }" readonly/>
                   </div>
                </div>
              

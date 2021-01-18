@@ -82,7 +82,7 @@
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <% UserVo user = (UserVo)request.getAttribute("user"); %>
-            <form class="form-horizontal" id="sendfrm" role="form" action="<%= request.getContextPath()%>/userModify" method="POST">
+            <form class="form-horizontal" id="sendfrm" role="form" action="${pageContextPath.request.getContextPath}/userModify" method="POST">
                
                <!-- 사용자 아이디를 파라미터로 넘기기위해 만든 것 (hidden) 으로 숨김 
                		( 많이쓰이는 방법이다 )-->

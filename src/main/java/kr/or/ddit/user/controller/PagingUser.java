@@ -54,8 +54,6 @@ public class PagingUser extends HttpServlet {
 		request.setAttribute("pagination", pagination);
 		
 		request.getRequestDispatcher("/user/pagingUser.jsp").forward(request, response);
-		
-		
 
 	}
 

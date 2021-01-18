@@ -4,6 +4,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,13 +20,15 @@
 
 <%@include file="/common/common_lib.jsp" %>
 
-<script src="/js/jquery/jquery-1.12.4.js"></script><link href="bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
-<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script><!-- Custom styles for this template -->
+<!-- <script src="/js/jquery/jquery-1.12.4.js"></script> -->
+
+<link href="bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
+<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script><!-- Custom styles for this template -->
 
 	<!-- Custom styles for this template -->
-<link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
 
-<link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
 <script>
 	$(function(){
 		$(".user").on("click", function(){
@@ -43,7 +46,7 @@
 <body>
 <%@ include file="/common/header.jsp" %>
 
-<form id="frm" action="<%=request.getContextPath()%>/user">
+<form id="frm" action="${pageContext.request.contextPath }/user">
 	<input type="hidden" id="userid" name="userid" value="">
 </form>
 
@@ -95,19 +98,15 @@
 			
 			<%
 				List<UserVo> list = (List<UserVo>)request.getAttribute("userlist");
-			
-				for(UserVo vo : list){
 			%>
-				<tr class="user" data-userid="<%=vo.getUserid() %>">
-					<td><%=vo.getUserid() %></td>
-					<td><%=vo.getUsernm() %></td>
-					<td><%=vo.getAlias() %></td>
-					<td><%=vo.getReg_dt_fmt() %></td>
+			<c:forEach items="${userlist }" var="user">
+				<tr class="user" data-userid="${user.userid }">
+					<td>${user.userid }</td>
+					<td>${user.usernm }</td>
+					<td>${user.alias }</td>
+					<td>${user.getReg_dt_fmt() }</td>
 				</tr>
-			<%
-					
-				}
-			%>
+			</c:forEach>
 			
 				</table>
 		</div>
@@ -116,10 +115,7 @@
 
 		<div class="text-center">
 		requset.getAttribute("pageVO") : <%=((PageVo)request.getAttribute("pageVo")).getPage() %>
-		<%
-		PageVo pageVo = (PageVo)request.getAttribute("pageVo");
-		int pagination = (int)request.getAttribute("pagination");
-		%>
+		
 		<%-- pagination 값이 4이므로 1부터 까지 4번반복된다
 			전체 사용자수 : 16명
 			페이지 사이즈 : 5
@@ -127,24 +123,20 @@
 		 --%>
 		 pagination : <%=request.getAttribute("pagination") %>
 				<ul class="pagination">
-				<li class="prev"><a href="<%= request.getContextPath()%>/pagingUser?page=1&pageSize=<%=pageVo.getPageSize()%>">,,,</a></li>
-				
-		<%
-		 for(int i = 1; i <= pagination; i++){ 
-			 if(pageVo.getPage() == i){
-		 %>				
-		 <li class="active"><span><%=i %></span></li>
-		 <%
-			 }else{
-		 %>
-		<li><a href="<%=request.getContextPath() %>/pagingUser?page=<%=i %>
-		&pageSize=<%=pageVo.getPageSize() %>"><%=i %></a></li>
-		<%
-			 }
-		 }
-		%>
-		<li class="next"><a href="<%=request.getContextPath() %>/pagingUser?page=<%=pagination %>
-		&pageSize=<%=pageVo.getPageSize() %>">,,,</a></li>
+				<li class="prev"><a href="${pageContext.request.contextPath }/pagingUser?page=1&pageSize=${pageVo.pageSize}">,,,</a></li>
+				<c:forEach begin="1" end="${pagination }" var="i">
+					<c:choose>
+						<c:when test="${pageVo.page == i }">
+		 					<li class="active"><span>${i }</span></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="${pageContext.request.contextPath }/pagingUser?page=${i }
+							&pageSize=${pageVo.pageSize}">${i }</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>				
+		<li class="next"><a href="${pageContext.request.contextPath }/pagingUser?page=${pagination }
+		&pageSize=${pageVo.pageSize}">,,,</a></li>
 		
 				</ul>
 		</div>

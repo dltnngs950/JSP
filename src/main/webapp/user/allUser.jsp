@@ -1,8 +1,10 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -75,25 +77,21 @@
 				</tr>
 			
 			<%
-				List<UserVo> list = (List<UserVo>)request.getAttribute("userList");
+				List<UserVo> userList = (List<UserVo>)request.getAttribute("userList");
 			
-				for(int i =0; i < list.size(); i++){
+// 				for(int i =0; i < userList.size(); i++){
 					
-					UserVo vo = list.get(i);
-					
-					if(list != null){
-				
+// 					UserVo user = userList.get(i);
 			%>
+			<c:forEach items="${userList }" var="user">
 				<tr>
-					<td><%=vo.getUserid() %></td>
-					<td><%=vo.getUsernm() %></td>
-					<td><%=vo.getAlias() %></td>
-					<td><%=vo.getReg_dt_fmt() %></td>
+					<td>${user.userid }</td>
+					<td>${user.usernm }</td>
+					<td>${user.alias }</td>
+					<td>${user.getReg_dt_fmt() }</td>
 				</tr>
-			<%
-					}
-				}
-			%>
+			</c:forEach>
+<%-- 			<%}%> --%>
 			
 				</table>
 		</div>

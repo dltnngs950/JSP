@@ -1,6 +1,7 @@
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +18,12 @@
 <%@include file="/common/common_lib.jsp" %>
 
 <!-- <script src="/js/jquery/jquery-1.12.4.js"></script> -->
-<link href="${pageContextPath.request.getContextPath}/css/bootstrap.css" rel="stylesheet">
+<link href="${cp}/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap core CSS -->
-<script src="${pageContextPath.request.getContextPath}/css/bootstrap.js"></script>
+<script src="${cp}/css/bootstrap.js"></script>
 <!-- Custom styles for this template -->
-<link href="${pageContextPath.request.getContextPath}/css/dashboard.css" rel="stylesheet">
-<link href="${pageContextPath.request.getContextPath}/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/dashboard.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 
 <script>
 // 	사용자 수정 : method -> get action -> /userModify
@@ -35,7 +36,7 @@
 	$("#modifyBtn").on('click', function(){
 		
 		$("#frm").attr("method", "GET")
-		$("#frm").attr("action", "${pageContextPath.request.getContextPath}/userModify")
+		$("#frm").attr("action", "${cp}/userModify")
 		$("#frm").submit();
 		
 	})
@@ -43,7 +44,7 @@
 	$("#deleteBtn").on('click', function(){
 			if(confirm("정말 삭제 하시겠습니까?")==true){
 			$("#frm").attr("method", "post")
-			$("#frm").attr("action", "${pageContextPath.request.getContextPath}/deleteUser")
+			$("#frm").attr("action", "${cp}/deleteUser")
 			alert("삭제 되었습니다")
 			$("#frm").submit();
 			} else {
@@ -106,7 +107,7 @@
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
 						<div class="col-sm-10">
-						<img src="${pageContextPath.request.getContextPath}/profile/<%=userVo.getUserid() %>.png"/>
+						<img src="${cp}/profile/<%=userVo.getUserid() %>.png"/>
 						</div>
 					</div>
 					
@@ -141,7 +142,7 @@
 					<div class="form-group">
 						<label for="pass" class="col-sm-2 control-label">가입일자</label>
 						<div class="col-sm-10">
-							<span><%=userVo.getReg_dt_fmt() %></span>
+							<span><fmt:formatDate value="<%=userVo.getReg_dt() %>" pattern="yyyy.MM.dd"/></span>
 						</div>
 					</div>
 					

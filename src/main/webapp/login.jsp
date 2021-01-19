@@ -13,14 +13,14 @@
     <title>Signin Template for Bootstrap</title>
 
 <!--     Bootstrap core CSS -->
-<%--     <link href="${pageContextPath.request.getContextPath}/css/bootstrap.min.css" rel="stylesheet"> --%>
+<%--     <link href="${cp}/css/bootstrap.min.css" rel="stylesheet"> --%>
 	<%@include file="/common/common_lib.jsp"  %>
 	<%-- common_lib.jsp의 내용을 지금 기술되는 부분에 코드를 복사해서 붙여넣기 --%>
 	
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 	
     <!-- Custom styles for this template -->
-    <link href="${pageContextPath.request.getContextPath}/css/signin.css" rel="stylesheet">
+    <link href="${cp}/css/signin.css" rel="stylesheet">
 
     <script>
 //     	function getCookieValue(cookieStr, cookieName){
@@ -90,9 +90,9 @@
   <body>
 
     <div class="container">
-    	UNT_CD : ${param.UNT_CD } / <%=request.getParameter("UNT_CD") %>
+    	cp : ${cp } / <%=application.getAttribute("cp") %>
 
-      <form id="frm" class="form-signin" action="${pageContextPath.request.getContextPath}/loginController" method="get">
+      <form id="frm" class="form-signin" action="${cp}/loginController" method="get">
         
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>

@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +19,8 @@
    <%@ include file="/common/common_lib.jsp" %>
    
    <script src="/js/jquery/jquery-1.12.4.js"></script>
-   <link href="${pageContextPath.request.getContextPath}/css/dashboard.css" rel="stylesheet">
-   <link href="${pageContextPath.request.getContextPath}/css/blog.css" rel="stylesheet">
+   <link href="${cp}/css/dashboard.css" rel="stylesheet">
+   <link href="${cp}/css/blog.css" rel="stylesheet">
    
    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
    <script>
@@ -82,7 +83,7 @@
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <% UserVo user = (UserVo)request.getAttribute("user"); %>
-            <form class="form-horizontal" id="sendfrm" role="form" action="${pageContextPath.request.getContextPath}/userModify" method="POST">
+            <form class="form-horizontal" id="sendfrm" role="form" action="${cp}/userModify" method="POST">
                
                <!-- 사용자 아이디를 파라미터로 넘기기위해 만든 것 (hidden) 으로 숨김 
                		( 많이쓰이는 방법이다 )-->
@@ -119,8 +120,8 @@
                <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">등록일자</label>
                   <div class="col-sm-8">
-                     <label class="control-label" for="reg_dt"><%=user.getReg_dt_fmt() %></label>
-                     <input type="hidden" id="reg_dt" name="reg_dt" value="<%=user.getReg_dt_fmt() %>">
+                     <label class="control-label" for="reg_dt"><fmt:formatDate value="<%=user.getReg_dt() %>" pattern="yyyy.MM.dd"/></label>
+                     <input type="hidden" id="reg_dt" name="reg_dt" value="<fmt:formatDate value="<%=user.getReg_dt() %>" pattern="yyyy.MM.dd"/>">
                   </div>
                </div>
                

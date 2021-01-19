@@ -7,16 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<% // 스크립틀릿
-		
-		
-	%>
-	webapp/index.jsp -> localhost/index.jsp <br>
-	
-	webapp/image/brown.png <br>
-	
-	<img src="${cp}/image/sally.png"/>
-
+	user set : ${USER_SET }
 </body>
 </html>

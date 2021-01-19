@@ -19,12 +19,12 @@
 <%@include file="/common/common_lib.jsp" %>
 
 <script src="/js/jquery/jquery-1.12.4.js"></script><link href="bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
-<script src="${pageContextPath.request.getContextPath}/js/bootstrap.js"></script><!-- Custom styles for this template -->
+<script src="${cp}/js/bootstrap.js"></script><!-- Custom styles for this template -->
 
 	<!-- Custom styles for this template -->
-<link href="${pageContextPath.request.getContextPath}/css/dashboard.css" rel="stylesheet">
+<link href="${cp}/css/dashboard.css" rel="stylesheet">
 
-<link href="${pageContextPath.request.getContextPath}/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 </head>
 
 <body>

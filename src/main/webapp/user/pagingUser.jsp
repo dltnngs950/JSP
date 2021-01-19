@@ -24,12 +24,12 @@
 <!-- <script src="/js/jquery/jquery-1.12.4.js"></script> -->
 
 <link href="bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
-<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script><!-- Custom styles for this template -->
+<script src="${cp }/js/bootstrap.js"></script><!-- Custom styles for this template -->
 
 	<!-- Custom styles for this template -->
-<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
+<link href="${cp }/css/dashboard.css" rel="stylesheet">
 
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp }/css/blog.css" rel="stylesheet">
 <script>
 	$(function(){
 		$(".user").on("click", function(){
@@ -47,7 +47,7 @@
 <body>
 <%@ include file="/common/header.jsp" %>
 
-<form id="frm" action="${pageContext.request.contextPath }/user">
+<form id="frm" action="${cp }/user">
 	<input type="hidden" id="userid" name="userid" value="">
 </form>
 
@@ -124,19 +124,19 @@
 		 --%>
 		 pagination : <%=request.getAttribute("pagination") %>
 				<ul class="pagination">
-				<li class="prev"><a href="${pageContext.request.contextPath }/pagingUser?page=1&pageSize=${pageVo.pageSize}">,,,</a></li>
+				<li class="prev"><a href="${cp }/pagingUser?page=1&pageSize=${pageVo.pageSize}">,,,</a></li>
 				<c:forEach begin="1" end="${pagination }" var="i">
 					<c:choose>
 						<c:when test="${pageVo.page == i }">
 		 					<li class="active"><span>${i }</span></li>
 						</c:when>
 						<c:otherwise>
-							<li><a href="${pageContext.request.contextPath }/pagingUser?page=${i }
+							<li><a href="${cp }/pagingUser?page=${i }
 							&pageSize=${pageVo.pageSize}">${i }</a></li>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>				
-		<li class="next"><a href="${pageContext.request.contextPath }/pagingUser?page=${pagination }
+		<li class="next"><a href="${cp }/pagingUser?page=${pagination }
 		&pageSize=${pageVo.pageSize}">,,,</a></li>
 		
 				</ul>

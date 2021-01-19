@@ -25,7 +25,7 @@ HttpServletReqeust : 사용자가 요청을 보낼때의 정보 (파라미터, �
 		
 		webApplication =(similar) contextPath
 		
-		request.getcontextPath()를 통해 contextPath 문자열을 얻어올 수 있다
+		${pageContextPath.request.getContextPath}()를 통해 contextPath 문자열을 얻어올 수 있다
 		
 		서버 하나에 여러개의 웹어플리케이션을 서비스 하는 것이 가능
 		--> url 요청시 어떤 웹 어플리케이션을 의미하는지 구분이 필요
@@ -41,8 +41,8 @@ HttpServletReqeust : 사용자가 요청을 보낼때의 정보 (파라미터, �
 		    ==> jsp라는 이름의 컨텍스트 패스를 수정할 경우 링크와 관련된 부분을 모두 수정해야하는
 		    	문제점이 발생
 		    	
-		    	request.getContextPath()메소드를 통해 유지 보수 문제 해결 가능
-		    	<img src="${pageContextPath.request.getContextPath}/image/brown.png"/>
+		    	${pageContextPath.request.getContextPath}()메소드를 통해 유지 보수 문제 해결 가능
+		    	<img src="${pageContextPath.${pageContextPath.request.getContextPath}}/image/brown.png"/>
 		    	
 	webapp/jsp/request.jsp
 	

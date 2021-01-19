@@ -12,8 +12,8 @@
 	<c:set var="userid" value="brown"/>
 	
 	<%-- java
-			if() ==> test속성에 검사할 조건식을 기술
-			uesrid 속성의 값이 brown인 체크하고 brown일 때만 화면에 userid 속성을 출력
+			if() ==> test 속성에 검사할 조건식을 기술
+			uesrid 속성의 값이 brown인지 체크하고 brown일 때만 화면에 userid 속성을 출력
 			
 			1. test 속성 안에 조건을 기술할 때는 EL식에 포함해서 작성을 해야한다
 			${userid } == "brown" 	X

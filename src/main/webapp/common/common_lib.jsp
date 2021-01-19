@@ -7,8 +7,8 @@
 %>
 
 <!-- Bootstrap core CSS -->
-    <link href="${pageContextPath.request.getContextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContextPath.${pageContextPath.request.getContextPath}}/css/bootstrap.min.css" rel="stylesheet">
     
 	<script src="Https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
-	<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
+	<link href="${pageContextPath.request.getContextPath}/css/bootstrap.css" rel="stylesheet">

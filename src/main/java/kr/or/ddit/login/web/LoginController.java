@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,6 +79,8 @@ public class LoginController extends HttpServlet {
 		logger.debug(user.getPass());
 			
 		if( user != null && pass.equals(user.getPass())) { // 로그인 성공
+			HttpSession session = request.getSession();
+			session.setAttribute("S_USER", user);
 			request.getRequestDispatcher("/main.jsp").forward(request, response);
 		}else {// 로그인 실패
 			response.sendRedirect(request.getContextPath()+"/login.jsp");

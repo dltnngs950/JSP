@@ -17,9 +17,9 @@ session.setAttribute("속성명", 속성값);
 
 el 사용시 null값 처리를 자동으로 함 => resistUser.jsp null 처리 간소화 작업
 		
-${pageContextPath.request.getContextPath} ==> %{pageContext.request.contextPath}
+${pageContextPath.${pageContextPath.request.getContextPath}} ==> %{pageContext.request.contextPath}
 
-<%=request.getContextPath() %>
+${pageContextPath.request.getContextPath}
 
 {pageContext}
 {param.}
@@ -29,6 +29,7 @@ JSTL CORE 조건 제어 (java if)
 if		==> java 단일 if
 choose	==> java if, else if , else		
 
+----------------------------------------------------------
 
 JSTL 반복문 ( for, 향상된 for ) ***** 매우중요 ( used frequently )
 forEach
@@ -37,6 +38,31 @@ JSTL core URL
 import : 특정 url에서 반환하는 값(html)을 호출하는 곳에 추가하는 기능
 redirect : 클라이언트에게 다른 url로 재전송 요청
 url : url 경로 작성
+
+JSTL core 기타
+catch
+out
+
+FILTER
+요청을 처리할 servlet, jsp로 요청이 정달되기 전에 사전에 먼저 요청을 받아
+공통적인 작업을 서로 수행할 수 있는 객체
+
+1. 필터는 여러개 등록할 수 있다.
+	-요청 - 필터1 -> 필터2 ..... 최족적적으로 해당 요청을 처리할 servlet,  jsp로 요청이 전달
+	servlet,jsp에 의해 응답이 생성되면 거쳐온 필터의 응답이 전달된다
+	servet, jsp ==> 필터2 - 필터1 --- 최종 으답 전달
+2. 필터 생성 방법
+	. Filter 인터페이스 구현
+	- init, destroy, doFilter
+	key -uri, 값은 - 요청횟수
+	
+	/login,jsp, 5
+	/pagingUser, 15
+	
+	
+	 
+
+
 
 
 

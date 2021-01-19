@@ -18,16 +18,15 @@
    <%@ include file="/common/common_lib.jsp" %>
    
 <!--    <script src="/js/jquery/jquery-1.12.4.js"></script> -->
-   <link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
-   <link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+   <link href="${pageContextPath.request.getContextPath}/css/dashboard.css" rel="stylesheet">
+   <link href="${pageContextPath.request.getContextPath}/css/blog.css" rel="stylesheet">
    
    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
      <%
    		UserVo userVo = (UserVo)request.getAttribute("userVo");
   	 %>     
    <script>
-      $(function(){
-    	  
+      $(function(){	  
 <%--     	 <% --%>
 //     		 if(userVo != null){ 
 <%--     	 %>  --%>
@@ -42,8 +41,7 @@
 //     		}
 <%--      	%>   --%>
      	
-         $('#addrBtn').on('click',function(){
-            
+         $('#addrBtn').on('click',function(){        
              new daum.Postcode({
                  oncomplete: function(data) {
                      // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
@@ -56,14 +54,8 @@
                      $('#addr2').focus();
                  }
              }).open();
-         })
-         
-      
-         
-             
-       })
-      
-     
+         })       
+       })        
    </script>
    
 </head>
@@ -108,8 +100,7 @@
          	contextPath el
             <form class="form-horizontal" id="sendfrm" role="form" 
             	action="${pageContext.request.contextPath}/registUser" method="POST">
-            	
-                      
+            	 
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
                   <div class="col-sm-8">

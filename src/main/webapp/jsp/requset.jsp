@@ -11,10 +11,10 @@
 	request.getContextType() : <%= request.getContentType() %> <br>
 	request.getMethod() : <%= request.getMethod() %> <br>
 	requset.getRequestURI() : <%= request.getRequestURI() %> <br>
-	request.getContextPath() : ${pageContextPath.request.getContextPath} <br>
+	${pageContextPath.request.getContextPath}() : ${pageContextPath.${pageContextPath.request.getContextPath}} <br>
 	requset.getServerPort() :  <%= request.getServerPort() %><br><br><br>
 	
-	<img src="${pageContextPath.request.getContextPath}/image/sally.png"/>
+	<img src="${pageContextPath.${pageContextPath.request.getContextPath}}/image/sally.png"/>
 	
 </body>
 </html>

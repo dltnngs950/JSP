@@ -42,7 +42,7 @@ HttpServletReqeust : 사용자가 요청을 보낼때의 정보 (파라미터, �
 		    	문제점이 발생
 		    	
 		    	${pageContextPath.request.getContextPath}()메소드를 통해 유지 보수 문제 해결 가능
-		    	<img src="${pageContextPath.${pageContextPath.request.getContextPath}}/image/brown.png"/>
+		    	<img src="${pageContextPath.request.getContextPath}/image/brown.png"/>
 		    	
 	webapp/jsp/request.jsp
 	

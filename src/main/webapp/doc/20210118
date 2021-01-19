@@ -17,7 +17,7 @@ session.setAttribute("속성명", 속성값);
 
 el 사용시 null값 처리를 자동으로 함 => resistUser.jsp null 처리 간소화 작업
 		
-${pageContextPath.${pageContextPath.request.getContextPath}} ==> %{pageContext.request.contextPath}
+${pageContextPath.request.getContextPath} ==> %{pageContext.request.contextPath}
 
 ${pageContextPath.request.getContextPath}
 

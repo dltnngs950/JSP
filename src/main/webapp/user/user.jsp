@@ -21,8 +21,8 @@
 <!-- Bootstrap core CSS -->
 <script src="${pageContextPath.request.getContextPath}/css/bootstrap.js"></script>
 <!-- Custom styles for this template -->
-<link href="${pageContextPath.${pageContextPath.request.getContextPath}}/css/dashboard.css" rel="stylesheet">
-<link href="${pageContextPath.${pageContextPath.request.getContextPath}}/css/blog.css" rel="stylesheet">
+<link href="${pageContextPath.request.getContextPath}/css/dashboard.css" rel="stylesheet">
+<link href="${pageContextPath.request.getContextPath}/css/blog.css" rel="stylesheet">
 
 <script>
 // 	사용자 수정 : method -> get action -> /userModify
@@ -35,7 +35,7 @@
 	$("#modifyBtn").on('click', function(){
 		
 		$("#frm").attr("method", "GET")
-		$("#frm").attr("action", "${pageContextPath.${pageContextPath.request.getContextPath}}/userModify")
+		$("#frm").attr("action", "${pageContextPath.request.getContextPath}/userModify")
 		$("#frm").submit();
 		
 	})
@@ -43,7 +43,7 @@
 	$("#deleteBtn").on('click', function(){
 			if(confirm("정말 삭제 하시겠습니까?")==true){
 			$("#frm").attr("method", "post")
-			$("#frm").attr("action", "${pageContextPath.${pageContextPath.request.getContextPath}}/deleteUser")
+			$("#frm").attr("action", "${pageContextPath.request.getContextPath}/deleteUser")
 			alert("삭제 되었습니다")
 			$("#frm").submit();
 			} else {

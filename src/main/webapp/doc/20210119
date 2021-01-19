@@ -9,8 +9,42 @@
 	
 	세션정보가 없을 경우 로그인 화면으로 이동
 	
-	
-	
+필터를 이용하여 임의의 파라미터 추가하가ㅣ
+request 객체에 생성되어있는 paramterMap은 수정이 불가능한 Map
+
+즉 임의로 파라미터를 추가하느 작업은 불가능
+
+filter를 이용하여 요청을 servlet으로 전달하기 전에
+서버가 생성한 request 객체를 이용하여 새로운 request 객체를 생성
+--> requestWrapper
+
+원본 parameter를 복사하여 수정 가능한 Map에 복사
+request객체가 원본 파라미터 맵이 아닌, 우리가 만든 map객체를 사용할 수 있도록
+parameter관련 메소드를 4개 재정의
+
+wrapper ==> HttpServletRequsetWrapper 클래스 상속
+
+Resource Bundle : 국제화 서비스를 위한 번역 파일
+파일 이름 형식 : 리소스번들이름_언어코드_국가코드.properties
+				msg_ko.properties
+				msg_en.properties
+				msg.ja.properties
+				
+				지원하지 않는 언어, 국가코드에 대해서 기본적으로 적용되는 파일
+				msg_properties	
+				
+파일 작성
+코드 = 메세지
+
+jsp에는 코드 부분을 기술하면국제화 ㅏ처리에 의해 사용자가 요청한 언어의 메세지로 치환된다
+
+
+selectLang.jsp ==> selectLang_ING.jsp
+
+selectLang.jsp 요청을 보내는 두가지 경로가 존재
+
+1. 웹브라우저 주소줄에 localhost/jstl/selectLang.jsp를 입력 (파라미터가 없음)
+2. 
 	
 	
 	

@@ -41,7 +41,6 @@ public class UserController extends HttpServlet{
 		logger.debug("유저아이디 : " + user.getUserid());
 		logger.debug("유저이름 : " + user.getUsernm());
 		logger.debug("유저별명" + user.getAlias());
-		logger.debug("가입일자 : " + user.getReg_dt_fmt());
 
 		req.setAttribute("user", user);
 		
